@@ -50,10 +50,12 @@ void * firstList(List * list) {
 void * nextList(List * list) {
 
   Node * nodo = createNode(list);
-  nodo->data = list->head;
-  list->current = nodo->next;
-  if (list->current->data)
-    return list->current->data;
+  if (list->head != NULL) {
+    if (list->current->next != NULL) {
+      list->current = list->current->next;
+      return list->current->data;
+    }
+  }
   return NULL;
 }
 

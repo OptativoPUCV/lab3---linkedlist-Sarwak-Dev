@@ -147,3 +147,14 @@ Thu 28 Mar 2024 02:52:43 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 477d8fd
+Thu 28 Mar 2024 02:54:33 PM UTC: 
+ list.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘nextList’:
+list.c:52:10: error: unused variable ‘nodo’ [-Werror=unused-variable]
+   52 |   Node * nodo = createNode(list);
+      |          ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+02c97e9
