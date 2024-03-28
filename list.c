@@ -41,7 +41,9 @@ List * createList() {
 
 void * firstList(List * list) {
 
-  list->current = list->head;
+    Node * nodo = createNode(list);
+  
+  list->head = nodo->next;
   
     return list->head;
 }
