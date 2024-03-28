@@ -54,7 +54,6 @@ void * nextList(List * list) {
   list->current = nodo->next;
   if (list->current)
     return list->current;
-  return NULL;
 }
 
 void * lastList(List * list) {
