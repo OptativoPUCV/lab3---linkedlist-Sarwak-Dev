@@ -49,7 +49,6 @@ void * firstList(List * list) {
 
 void * nextList(List * list) {
 
-  Node * nodo = createNode(list);
   if (list->head != NULL) {
     if (list->current->next != NULL) {
       list->current = list->current->next;
