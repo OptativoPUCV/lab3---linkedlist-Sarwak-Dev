@@ -43,7 +43,7 @@ void * firstList(List * list) {
 
     Node * nodo = createNode(list);
   
-  list->head = nodo->next;
+  list->head = nodo->data;
   
     return list->head;
 }
