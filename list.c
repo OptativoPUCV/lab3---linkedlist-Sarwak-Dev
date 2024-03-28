@@ -50,7 +50,8 @@ void * firstList(List * list) {
 void * nextList(List * list) {
 
   Node * nodo = createNode(list);
-  nodo->data = list->current;
+  nodo->data = list->head;
+  list->current = list->current->next;
   
     return nodo->data;
 }
