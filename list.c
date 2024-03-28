@@ -51,7 +51,7 @@ void * nextList(List * list) {
 
   Node * nodo = createNode(list);
   nodo->data = list->head;
-  list->current = list->current->next;
+  list->current = nodo->next;
   
     return nodo->data;
 }
