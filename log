@@ -96,3 +96,9 @@ list.c:52:17: error: ‘nodo’ is used uninitialized [-Werror=uninitialized]
 cc1: all warnings being treated as errors
 Compilation failed
 1aa6b67
+Thu 28 Mar 2024 02:45:06 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|5
+total_score: 15/70
+9dc8733

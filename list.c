@@ -49,7 +49,7 @@ void * firstList(List * list) {
 
 void * nextList(List * list) {
 
-  Node * nodo = createNode(nodo);
+  Node * nodo = createNode(list);
   nodo->data = list->current;
   
     return nodo->data;
