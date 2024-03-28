@@ -40,15 +40,11 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-
-    Node * nodo = createNode(list);
   
-    nodo->next = list->head;
-    nodo->prev = NULL;
-    list->head->prev = nodo;
-    list->head = nodo;
-    
-    return nodo->data;
+    list->current = list->head;
+    if (list->current)
+      return list->current->data;
+    return NULL;
 }
 
 void * nextList(List * list) {
