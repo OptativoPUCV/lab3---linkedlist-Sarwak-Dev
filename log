@@ -85,3 +85,14 @@ Thu 28 Mar 2024 02:41:14 PM UTC:
  tests:  2|5
 total_score: 15/70
 5b6406a
+Thu 28 Mar 2024 02:44:15 PM UTC: 
+ list.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+test.c: In function ‘nextList’:
+list.c:52:17: error: ‘nodo’ is used uninitialized [-Werror=uninitialized]
+   52 |   Node * nodo = createNode(nodo);
+      |                 ^~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1aa6b67
