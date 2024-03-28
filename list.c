@@ -53,7 +53,7 @@ void * nextList(List * list) {
   nodo->data = list->head;
   list->current = nodo->next;
   if (list->current->data)
-    return list->current;
+    return list->current->data;
   return NULL;
 }
 
