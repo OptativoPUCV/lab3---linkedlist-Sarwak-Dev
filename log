@@ -38,3 +38,14 @@ Thu 28 Mar 2024 02:34:10 PM UTC:
  tests:  1|5
 total_score: 10/70
 c1634e6
+Thu 28 Mar 2024 02:35:03 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘firstList’:
+list.c:44:12: error: variable ‘nodo’ set but not used [-Werror=unused-but-set-variable]
+   44 |     Node * nodo = createNode(list);
+      |            ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+74c289a
