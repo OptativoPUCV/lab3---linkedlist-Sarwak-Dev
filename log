@@ -49,3 +49,9 @@ list.c:44:12: error: variable ‘nodo’ set but not used [-Werror=unused-but-se
 cc1: all warnings being treated as errors
 Compilation failed
 74c289a
+Thu 28 Mar 2024 02:35:10 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+f06f082
