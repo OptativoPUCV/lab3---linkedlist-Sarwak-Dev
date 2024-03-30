@@ -97,19 +97,33 @@ void pushBack(List * list, void * data) {
     pushCurrent(list,data);
 }
 
-void pushCurrent(List * list, void * data) {
+void pushCurrent(List *list, void *data) {
+    Node *newNode = createNode(data);
 
-  Node *newNode = createNode(data);
-  if (list->current == NULL) {
-    list->head = newNode;
-    return;
-  }
-
-  newNode->next = list->current->next;
-  newNode->prev = list->head;
-  list->current->next = newNode;
-  list->tail = newNode;
-  
+    if (list->current == NULL) {
+        // Si no hay un nodo actual, inserta el nuevo nodo al principio de la lista
+        newNode->next = list->head;
+        if (list->head != NULL) {
+            list->head->prev = newNode;
+        }
+        list->head = newNode;
+        if (list->tail == NULL) {
+            // Si la lista estaba vacía, la cola también será el nuevo nodo
+            list->tail = newNode;
+        }
+    } else {
+        // Inserta el nuevo nodo después del nodo actual
+        newNode->next = list->current->next;
+        if (list->current->next != NULL) {
+            list->current->next->prev = newNode;
+        }
+        newNode->prev = list->current;
+        list->current->next = newNode;
+        if (list->current == list->tail) {
+            // Si el nodo actual es la cola, actualiza la cola al nuevo nodo
+            list->tail = newNode;
+        }
+    }
 }
 
 void * popFront(List * list) {
