@@ -118,17 +118,33 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-void * popCurrent(List * list) {
+void * popCurrent(List *list) {
+    if (list->current == NULL) {
+        return NULL; // No hay nodo actual para eliminar
+    }
 
-  Node * temp = list->current;
-  
-  temp = list->current;
-  list->current = list->current->next;
-  list->current->prev = temp->prev;
+    Node *nodeToRemove = list->current;
 
-  free(temp);
-  
-    return NULL;
+    if (list->current->prev != NULL) {
+        list->current->prev->next = list->current->next;
+    } else {
+        // Si el nodo actual es el primer nodo de la lista
+        list->head = list->current->next;
+    }
+
+    if (list->current->next != NULL) {
+        list->current->next->prev = list->current->prev;
+    } else {
+        // Si el nodo actual es el último nodo de la lista
+        list->tail = list->current->prev;
+    }
+
+    // Avanzar el puntero al nodo actual
+    list->current = list->current->next;
+
+    // Liberar la memoria del nodo eliminado
+    free(nodeToRemove);
+
 }
 
 void cleanList(List * list) {
