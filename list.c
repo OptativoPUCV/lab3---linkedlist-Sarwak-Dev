@@ -80,14 +80,9 @@ void * prevList(List * list) {
 }
 
 void pushFront(List *list, void *data) {
-    Node *newNode = createNode(data); // Suponiendo que tienes una función createNode
+    Node *newNode = createNode(data);
 
-    // Caso especial: lista vacía
-    if (list->head == NULL) {
-        list->head = newNode;
-        list->tail = newNode; // Si la lista está vacía, tanto la cabeza como la cola apuntan al nuevo nodo
-        return;
-    }
+
 
     // Si la lista no está vacía
     newNode->next = list->head; // El nuevo nodo apunta al antiguo primer nodo
