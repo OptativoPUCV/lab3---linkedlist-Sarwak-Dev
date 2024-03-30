@@ -100,12 +100,7 @@ void pushBack(List * list, void * data) {
 void pushCurrent(List *list, void *data) {
     Node *newNode = createNode(data);
 
-    if (list->current == NULL) {
-        newNode->next = list->head;
-        
-    } 
     
-    else {
         // Inserta el nuevo nodo después del nodo actual
         newNode->next = list->current->next;
         if (list->current->next != NULL) {
@@ -117,7 +112,6 @@ void pushCurrent(List *list, void *data) {
             // Si el nodo actual es la cola, actualiza la cola al nuevo nodo
             list->tail = newNode;
         }
-    }
 }
 
 void * popFront(List * list) {
