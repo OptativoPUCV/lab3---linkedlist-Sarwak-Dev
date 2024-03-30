@@ -118,13 +118,14 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-void * popCurrent(List *list) {
+void *popCurrent(List *list) {
     if (list->current == NULL) {
         return NULL; // No hay nodo actual para eliminar
     }
 
     Node *nodeToRemove = list->current;
 
+    // Actualizar los punteros del nodo previo y siguiente
     if (list->current->prev != NULL) {
         list->current->prev->next = list->current->next;
     } else {
@@ -142,10 +143,13 @@ void * popCurrent(List *list) {
     // Avanzar el puntero al nodo actual
     list->current = list->current->next;
 
+    // Obtener el dato del nodo eliminado
+    void *data = nodeToRemove->data;
+
     // Liberar la memoria del nodo eliminado
     free(nodeToRemove);
 
-    return NULL; // O el dato del nodo eliminado, si lo necesitas
+    return data; // Retorna el dato del nodo eliminado
 }
 
 void cleanList(List * list) {
