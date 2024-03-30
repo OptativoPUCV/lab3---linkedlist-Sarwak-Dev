@@ -119,9 +119,7 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List *list) {
-    if (list->current == NULL) {
-        return NULL; // No hay nodo actual para eliminar
-    }
+
 
     Node *nodeToRemove = list->current;
 
@@ -149,6 +147,7 @@ void * popCurrent(List *list) {
     // Liberar la memoria del nodo eliminado
     free(nodeToRemove);
 
+    return data; // Retorna el dato del nodo eliminado
 }
 
 void cleanList(List * list) {
