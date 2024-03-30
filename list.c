@@ -124,25 +124,23 @@ void * popCurrent(List *list) {
     if (list->current->prev != NULL) {
         list->current->prev->next = list->current->next;
     } 
-
+    else {
+        list->head = list->current->next;
+    }
 
     if (list->current->next != NULL) {
         list->current->next->prev = list->current->prev;
-    } else {
-        // Si el nodo actual es el último nodo de la lista
+    } 
+    else {
         list->tail = list->current->prev;
     }
 
-    // Avanzar el puntero al nodo actual
     list->current = list->current->next;
-
-    // Obtener el dato del nodo eliminado
     void *data = nodeToRemove->data;
 
-    // Liberar la memoria del nodo eliminado
     free(nodeToRemove);
 
-    return data; // Retorna el dato del nodo eliminado
+    return data; 
 }
 
 void cleanList(List * list) {
