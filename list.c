@@ -102,6 +102,7 @@ void pushCurrent(List *list, void *data) {
   
         newNode->next = list->current->next;
         newNode->prev = list->current;
+        list->current->next = newNode;
         if (list->current == list->tail) {
             // Si el nodo actual es la cola, actualiza la cola al nuevo nodo
             list->tail = newNode;
