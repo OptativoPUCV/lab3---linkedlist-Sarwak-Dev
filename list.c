@@ -85,6 +85,7 @@ void pushFront(List *list, void *data) {
     // Caso especial: lista vacía
     if (list->head == NULL) {
         list->head = newNode;
+        list->tail = newNode; // Si la lista está vacía, tanto la cabeza como la cola apuntan al nuevo nodo
         return;
     }
 
