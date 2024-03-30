@@ -130,9 +130,12 @@ void * popCurrent(List *list) {
         list->head = list->current->next;
     }
 
+    if (list->current->next != NULL) {
         list->current->next->prev = list->current->prev;
+    } else {
         // Si el nodo actual es el último nodo de la lista
         list->tail = list->current->prev;
+    }
 
     // Avanzar el puntero al nodo actual
     list->current = list->current->next;
