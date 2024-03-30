@@ -101,17 +101,11 @@ void pushCurrent(List *list, void *data) {
     Node *newNode = createNode(data);
 
     if (list->current == NULL) {
-        // Si no hay un nodo actual, inserta el nuevo nodo al principio de la lista
         newNode->next = list->head;
-        if (list->head != NULL) {
-            list->head->prev = newNode;
-        }
-        list->head = newNode;
-        if (list->tail == NULL) {
-            // Si la lista estaba vacía, la cola también será el nuevo nodo
-            list->tail = newNode;
-        }
-    } else {
+        
+    } 
+    
+    else {
         // Inserta el nuevo nodo después del nodo actual
         newNode->next = list->current->next;
         if (list->current->next != NULL) {
