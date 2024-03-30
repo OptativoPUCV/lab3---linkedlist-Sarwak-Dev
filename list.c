@@ -121,14 +121,10 @@ void * popBack(List * list) {
 void * popCurrent(List *list) {
     Node *nodeToRemove = list->current;
 
-    // Actualizar los punteros del nodo previo y siguiente
     if (list->current->prev != NULL) {
         list->current->prev->next = list->current->next;
     } 
-    else {
-        // Si el nodo actual es el primer nodo de la lista
-        list->head = list->current->next;
-    }
+
 
     if (list->current->next != NULL) {
         list->current->next->prev = list->current->prev;
